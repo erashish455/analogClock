@@ -5,7 +5,7 @@
     <title>Analog Clock</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=.7,maximum-scale=.7 shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=.8, maximum-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper ">
         <div class="outer">
             <div class="clock">
                 <div class="hand hour" data-hour-hand></div>
@@ -35,6 +35,15 @@
                 <div class="number number11"><span id="no11">11</span></div>
                 <div class="number number12"><span id="no12">12</span></div>
             </div>
+            <Div class="alarm mt-5">
+                <input type="number" name="hours" max="12" maxlength="12" placeholder="HOURS" id="alhours">
+                <input type="number" name="minuts" max="60" maxlength="60" placeholder="MINUTS" id="alminuts">
+                <select name="AmPm" id="alAmPm">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+                <button type="submit" onclick="alarm()">SET ALARM</button>
+            </Div>
 
         </div>
 
