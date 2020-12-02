@@ -1,0 +1,264 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    margin-left: 7rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper {
+    height: 425px;
+    width: 425px;
+    position: absolute;
+    background: linear-gradient(160deg, #2f4d4a, #ffe600, #3706e9);
+    border-radius: 50%;
+    cursor: default;
+    animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.outer {
+    width: 410px;
+    height: 407px;
+    background-color: cyan;
+    border-radius: 50%;
+    border: 5px solid greenyellow;
+    position: absolute;
+}
+
+.clock {
+    width: 400px;
+    height: 400px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    border: 3px solid black;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+.clock .number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 2.5rem;
+}
+
+.clock .number1 {
+    --rotation: 30deg;
+}
+
+.clock .number2 {
+    --rotation: 60deg;
+}
+
+.clock .number3 {
+    --rotation: 90deg;
+}
+
+.clock .number4 {
+    --rotation: 120deg;
+}
+
+.clock .number5 {
+    --rotation: 150deg;
+}
+
+.clock .number6 {
+    --rotation: 180deg;
+}
+
+.clock .number7 {
+    --rotation: 210deg;
+}
+
+.clock .number8 {
+    --rotation: 240deg;
+}
+
+.clock .number9 {
+    --rotation: 270deg;
+}
+
+.clock .number10 {
+    --rotation: 300deg;
+}
+
+.clock .number11 {
+    --rotation: 330deg;
+}
+
+.clock .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.clock .hand.second {
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+
+.clock .hand.minute {
+    width: 7px;
+    height: 40%;
+    background-color: chocolate;
+}
+
+.clock .hand.hour {
+    width: 10px;
+    height: 30%;
+    background-color: #2932e7;
+}
+
+
+/* for digital clock this css will apply */
+
+.clock .digital {
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    font-size: 2rem;
+    z-index: 1200;
+}
+
+.clock .digital1 {
+    position: absolute;
+    top: 70%;
+    left: 42%;
+    font-size: 2rem;
+}
+
+.side-links {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.side-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: white;
+    width: 180px;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+.side-link-youtube {
+    background-color: red;
+}
+
+.side-link-twitter {
+    background-color: #1DA1F2;
+}
+
+.side-link-github {
+    background-color: #6e5494;
+}
+
+.side-link-text {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.side-link-icon {
+    color: white;
+    font-size: 30px;
+}
+
+#no1 {
+    position: absolute;
+    transform: rotate(330deg);
+}
+
+#no2 {
+    position: absolute;
+    transform: rotate(300deg);
+}
+
+#no3 {
+    position: absolute;
+    transform: rotate(270deg);
+}
+
+#no4 {
+    position: absolute;
+    transform: rotate(240deg);
+}
+
+#no5 {
+    position: absolute;
+    transform: rotate(210deg);
+}
+
+#no6 {
+    position: absolute;
+    transform: rotate(180deg);
+}
+
+#no7 {
+    position: absolute;
+    transform: rotate(150deg);
+}
+
+#no8 {
+    position: absolute;
+    transform: rotate(120deg);
+}
+
+#no9 {
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+#no10 {
+    position: absolute;
+    transform: rotate(60deg);
+}
+
+#no11 {
+    position: absolute;
+    transform: rotate(30deg);
+}
