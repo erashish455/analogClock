@@ -7,9 +7,13 @@ let digihour = document.getElementById('hour')
 let digiminuts = document.getElementById('minuts')
 let digiseconds = document.getElementById('seconds')
 let dayNight = document.getElementById('AmPm')
+var time;
+let AmPm;
+var alHours, alMinuts, alAmPm;
+var currentDate;
 
 function setClock() {
-    const currentDate = new Date()
+    currentDate = new Date()
     const secondsRatio = currentDate.getSeconds() / 60
     const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60
     const hoursRatio = (minutesRatio + currentDate.getHours()) / 12
@@ -27,11 +31,6 @@ function setClock() {
     digiminuts.textContent = currentDate.getMinutes();
     digiseconds.textContent = currentDate.getSeconds();
     dayNight.textContent = AmPm
-
-
-
-
-
     setRotation(secondHand, secondsRatio)
     setRotation(minuteHand, minutesRatio)
     setRotation(hourHand, hoursRatio)
@@ -42,3 +41,35 @@ function setRotation(element, rotationRatio) {
 }
 
 setClock()
+
+
+function alarm() {
+    alHours = document.querySelector('#alhours')
+    console.log(alHours.value)
+    alMinuts = document.querySelector('#alminuts')
+    alAmPm = document.querySelector('#alAmPm')
+    addshake()
+
+
+
+}
+
+
+
+function addshake() {
+    var clock = document.querySelector('.clock')
+
+    if (alHours.value == time && alMinuts.value == currentDate.getMinutes()) {
+        clock.classList.add('shake')
+        setTimeout(removeshake(), 60000)
+    }
+
+}
+setInterval(addshake, 1000)
+
+
+
+function removeshake() {
+    let clockrem = document.querySelector('.clock')
+    clockrem.classList.remove
+}
