@@ -41,14 +41,14 @@ function setRotation(element, rotationRatio) {
 }
 
 setClock()
-
+let addshake1;
 
 function alarm() {
     alHours = document.querySelector('#alhours')
     console.log(alHours.value)
     alMinuts = document.querySelector('#alminuts')
     alAmPm = document.querySelector('#alAmPm')
-    addshake()
+    addshake1 = setInterval(addshake, 1000)
 
 
 
@@ -61,15 +61,18 @@ function addshake() {
 
     if (alHours.value == time && alMinuts.value == currentDate.getMinutes()) {
         clock.classList.add('shake')
-        setTimeout(removeshake(), 60000)
+        setTimeout(removeshake, 6000)
+
     }
 
 }
-setInterval(addshake, 1000)
+
 
 
 
 function removeshake() {
+    console.log('remove shake')
     let clockrem = document.querySelector('.clock')
-    clockrem.classList.remove
+    clockrem.classList.remove('shake')
+    clearInterval(addshake1)
 }
